@@ -1,0 +1,6 @@
+name: Plugin Name
+view: Tab # Tab or Popup if has an GUI
+
+acquisition_modes: 
+  - name: Plugin Acquisition
+    file_name: plugin_acquisition_mode.py
