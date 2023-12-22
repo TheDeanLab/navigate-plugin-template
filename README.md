@@ -1,8 +1,10 @@
 <h1 align="center">
-<img src="./src/plugins-template/view/icon/plugin-icon.jpg" width=200 height=200 />
 <!--
-navigate-plugins-template
+
+	<img src="./src/plugins-template/view/icon/plugin-icon.jpg" width=200 height=200 />
 -->
+
+navigate-plugins-template
 	
 <h2 align="center">
 	A Template for Creating Plugins for Navigate
