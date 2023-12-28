@@ -1,14 +1,16 @@
 <h1 align="center">
 <img src="./src/navigate-plugins-template/view/icon/plugin-icon.jpg" width="200" height="200"/>
 
-navigate-plugins-template
+navigate-plugin-template
 	
 <h2 align="center">
-	A Template for Creating Plugins for Navigate
+	A Template for Creating Plugins for navigate
 </h2>
 </h1>
 
-The navigate-plugins-template is a starter kit for developers looking to create plugins for the Navigate light sheet microscope control software. This template provides a basic structure and guidelines to help you develop and integrate new plugins into Navigate.
+The **navigate-plugin-template** is a starter kit for developers looking to create plugins for the **navigate** light-sheet microscope control software. This template provides a basic structure and guidelines to help you develop and integrate new plugins into **navigate**. 
+
+More information on how to develop your own plugins can be found [here](https://thedeanlab.github.io/navigate/advanced.html).
 
 ### Getting Started
 
@@ -19,11 +21,12 @@ The navigate-plugins-template is a starter kit for developers looking to create 
 5. **Test Your Plugin**: Ensure your plugin works as expected with Navigate.
 
 ### Template Structure
+Both navigate, and the navigate-plugin-template, are organized in an industry-standard Model-View-Controller architecture. 
 
-- `src/`: Source code for your plugin.
-- `tests/`: Tests for your plugin.
-- `docs/`: Documentation for your plugin.
-- `examples/`: Example scripts or configurations.
+- `model/devices/`: Device communication protocols for your plugin. Enables you to add new devices and extend the functionality of **navigate**.
+- `model/features/`: A feature template for your plugin. Enables you to use it as part of `smart` imaging workflows.
+- `view/`: Graphical user interface for your plugin. 
+- `controller/`: Sub-controller for your plugin, which coordinates actions placed in the graphical user interface with device control. 
 
 ### Contributing
 
