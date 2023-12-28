@@ -28,8 +28,6 @@ The navigate-plugins-template is a starter kit for developers looking to create 
 - `docs/`: Documentation for your plugin.
 - `examples/`: Example scripts or configurations.
 
-(Describe each directory and its intended use in more detail.)
-
 ### Contributing
 
 After developing your plugin, you can contribute it back to the Navigate community. Please see our contribution guidelines for more information.
