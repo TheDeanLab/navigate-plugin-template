@@ -1,15 +1,12 @@
 <h1 align="center">
+<img src="./src/navigate-plugins-template/view/icon/plugin-icon.jpg" width="200" height="200"/>
+
 navigate-plugins-template
 	
 <h2 align="center">
 	A Template for Creating Plugins for Navigate
 </h2>
 </h1>
-
-<!--
-![Tests](https://github.com/TheDeanLab/navigate-plugins-template/actions/workflows/push_checks.yaml/badge.svg)
-![codecov](https://codecov.io/gh/TheDeanLab/navigate-plugins-template/branch/develop/graph/badge.svg?token=YOUR_TOKEN)
--->
 
 The navigate-plugins-template is a starter kit for developers looking to create plugins for the Navigate light sheet microscope control software. This template provides a basic structure and guidelines to help you develop and integrate new plugins into Navigate.
 
