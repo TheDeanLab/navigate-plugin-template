@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://github.com/TheDeanLab/navigate-plugin-template/blob/main/plugins-template/view/icon/plugin-icon.jpg" width="200" height="200"/>
+<img src="https://github.com/TheDeanLab/navigate-plugin-template/blob/main/plugin-icon.jpg" width="200" height="200"/>
 
 navigate-plugin-template
 	
