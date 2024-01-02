@@ -3,22 +3,22 @@ class ExampleFeature:
         self.model = model
 
         self.config_table = {
-            'signal': {
-                'init': self.pre_func_signal,
-                'main': self.in_func_signal,
-                'end': self.end_func_signal,
-                'cleanup': self.cleanup_func_signal
+            "signal": {
+                "init": self.pre_func_signal,
+                "main": self.in_func_signal,
+                "end": self.end_func_signal,
+                "cleanup": self.cleanup_func_signal,
             },
-            'data': {
-                'init': self.pre_func_data,
-                'main': self.in_func_data,
-                'end': self.end_func_data,
-                'cleanup': self.cleanup_func_data
+            "data": {
+                "init": self.pre_func_data,
+                "main": self.in_func_data,
+                "end": self.end_func_data,
+                "cleanup": self.cleanup_func_data,
             },
-            'node': {
-                'node_type': 'multi-step', # "multi-step" or "one-step"
-                'device_related': True, # True or False
-                'need_response': True # True or False
+            "node": {
+                "node_type": "multi-step",  # "multi-step" or "one-step"
+                "device_related": True,  # True or False
+                "need_response": True,  # True or False
             },
         }
 

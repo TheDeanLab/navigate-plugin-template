@@ -1,5 +1,5 @@
 from navigate.tools.decorators import FeatureList
-from navigate.plugins.plugin_name.model.features.example_feature import (
+from navigate.model.features.feature_related_functions import (
     ExampleFeature,
 )
 

@@ -5,10 +5,14 @@ class SyntheticDevice:
     @property
     def commands(self):
         """Return commands dictionary
-        
+
         Returns
         -------
         commands : dict
             commands that the device supports
         """
-        return {}
+        return {
+            "move_plugin_device": lambda *args: print(
+                f"move synthetic plugin device {args[0]}!"
+            )
+        }

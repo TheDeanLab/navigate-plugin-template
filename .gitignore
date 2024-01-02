@@ -1,4 +1,9 @@
 
-src/plugins-template/.DS_Store
-src/plugins-template/view/.DS_Store
+plugins-template/.DS_Store
+plugins-template/view/.DS_Store
 .idea/*
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
