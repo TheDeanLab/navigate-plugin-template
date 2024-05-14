@@ -9,7 +9,7 @@ DEVICE_TYPE_NAME = "plugin_device"  # Same as in configuraion.yaml, for example 
 DEVICE_REF_LIST = ["type"]  # the reference value from configuration.yaml
 
 
-def load_device(configuration, is_synthetic=False):
+def load_device(microscope_name, configuration, is_synthetic=False):
     """Build device connection.
 
     Returns
