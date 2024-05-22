@@ -9,8 +9,15 @@ DEVICE_TYPE_NAME = "plugin_device"  # Same as in configuraion.yaml, for example 
 DEVICE_REF_LIST = ["type"]  # the reference value from configuration.yaml
 
 
-def load_device(microscope_name, configuration, is_synthetic=False):
+def load_device(hardware_configuration, is_synthetic=False):
     """Build device connection.
+
+    Parameters
+    ----------
+    hardware_configuration : dict
+        device hardware configuration section
+    is_synthetic : bool
+        use synthetic hardware
 
     Returns
     -------
@@ -21,6 +28,17 @@ def load_device(microscope_name, configuration, is_synthetic=False):
 
 def start_device(microscope_name, device_connection, configuration, is_synthetic=False):
     """Start device.
+
+    Parameters
+    ----------
+    microscope_name : string
+        microscope name
+    device_connection : object
+        device connection object returned by load_device()
+    configuration : dict
+        navigate configuration
+    is_synthetic : bool
+        use synthetic hardware
 
     Returns
     -------
