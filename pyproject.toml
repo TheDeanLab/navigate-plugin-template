@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plugins_template"
+version = "0.0.1"
+description = "Open source, smart, light-sheet microscopy control software plugin template."
+authors = [{name = "The Dean Lab, UT Southwestern Medical Center"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[project.urls]
+Source = "https://github.com/TheDeanLab/navigate-plugin-template"
+
+[project.entry-points."navigate.plugins"]
+plugin_name = "plugins_template.main:main"
+
+[tool.setuptools.package-data]
+plugin_name_data = ["plugin_config.yml",]

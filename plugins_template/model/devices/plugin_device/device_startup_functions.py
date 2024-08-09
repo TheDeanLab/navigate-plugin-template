@@ -52,16 +52,26 @@ def start_device(microscope_name, device_connection, configuration, is_synthetic
         ]["hardware"]["type"]
 
     if device_type == "PluginDevice":
-        plugin_device = load_module_from_file(
-            "plugin_device",
-            os.path.join(Path(__file__).resolve().parent, "plugin_device.py"),
-        )
-        return plugin_device.PluginDevice(device_connection=device_connection)
+        # install through navigate
+        # plugin_device = load_module_from_file(
+        #     "plugin_device",
+        #     os.path.join(Path(__file__).resolve().parent, "plugin_device.py"),
+        # )
+        # return plugin_device.PluginDevice(device_connection=device_connection)
+
+        # install through pip
+        from .plugin_device import PluginDevice
+        return PluginDevice(device_connection=device_connection)
     elif device_type == "synthetic":
-        synthetic_device = load_module_from_file(
-            "synthetic_device",
-            os.path.join(Path(__file__).resolve().parent, "synthetic_device.py"),
-        )
-        return synthetic_device.SyntheticDevice(device_connection=device_connection)
+        # install through navigate
+        # synthetic_device = load_module_from_file(
+        #     "synthetic_device",
+        #     os.path.join(Path(__file__).resolve().parent, "synthetic_device.py"),
+        # )
+        # return synthetic_device.SyntheticDevice(device_connection=device_connection)
+    
+        # install through pip
+        from .synthetic_device import SyntheticDevice
+        return SyntheticDevice(device_connection=device_connection)
     else:
         return device_not_found(microscope_name, device_type)
