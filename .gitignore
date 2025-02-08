@@ -3,6 +3,7 @@ plugins-template/.DS_Store
 plugins-template/view/.DS_Store
 .idea/*
 dist/
+build/
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
