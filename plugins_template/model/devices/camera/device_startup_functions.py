@@ -1,15 +1,10 @@
-# Standard Imports
-import os
-from pathlib import Path
-
-from navigate.tools.common_functions import load_module_from_file
 from navigate.model.device_startup_functions import device_not_found
 
-DEVICE_TYPE_NAME = "plugin_device"  # Same as in configuraion.yaml, for example "stage", "filter_wheel", "remote_focus_device"...
+DEVICE_TYPE_NAME = "camera"  # Same as in configuraion.yaml, for example "stage", "filter_wheel", "remote_focus_device"...
 DEVICE_REF_LIST = ["type"]  # the reference value from configuration.yaml
-SUPPORTED_DEVICE_TYPES = ["PluginDevice", "Synthetic"]
+SUPPORTED_DEVICE_TYPES = ["MyCamera"]
 
-def load_device(hardware_configuration, is_synthetic=False):
+def load_device(hardware_configuration, is_synthetic=False, device_type=None):
     """Build device connection.
 
     Parameters
@@ -23,10 +18,14 @@ def load_device(hardware_configuration, is_synthetic=False):
     -------
     device_connection : object
     """
-    return type("DeviceConnection", (object,), {})
+    if hardware_configuration["type"] == "MyCamera":
+        from .camera import MyCamera
+        return MyCamera.connect(hardware_configuration["serial_number"])
+    else:
+        return type("DeviceConnection", (object,), {})
 
 
-def start_device(microscope_name, device_connection, configuration, is_synthetic=False):
+def start_device(microscope_name, device_connection, configuration, *args, is_synthetic=False, id=0, **kwargs):
     """Start device.
 
     Parameters
@@ -48,10 +47,10 @@ def start_device(microscope_name, device_connection, configuration, is_synthetic
         device_type = "synthetic"
     else:
         device_type = configuration["configuration"]["microscopes"][microscope_name][
-            "plugin_device"
+            "camera"
         ]["hardware"]["type"]
 
-    if device_type == "PluginDevice":
+    if device_type == "MyCamera":
         # install through navigate
         # plugin_device = load_module_from_file(
         #     "plugin_device",
@@ -60,8 +59,8 @@ def start_device(microscope_name, device_connection, configuration, is_synthetic
         # return plugin_device.PluginDevice(device_connection=device_connection)
 
         # install through pip
-        from .plugin_device import PluginDevice
-        return PluginDevice(device_connection=device_connection)
+        from .camera import MyCamera
+        return MyCamera(microscope_name, device_connection, configuration)
     elif device_type.lower() == "synthetic":
         # install through navigate
         # synthetic_device = load_module_from_file(
@@ -71,7 +70,7 @@ def start_device(microscope_name, device_connection, configuration, is_synthetic
         # return synthetic_device.SyntheticDevice(device_connection=device_connection)
     
         # install through pip
-        from .synthetic_device import SyntheticDevice
-        return SyntheticDevice(device_connection=device_connection)
+        from navigate.model.devices.camera.synthetic import SyntheticCamera
+        return SyntheticCamera(microscope_name, device_connection, configuration)
     else:
         return device_not_found(microscope_name, device_type)
